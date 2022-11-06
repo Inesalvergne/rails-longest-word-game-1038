@@ -35,6 +35,8 @@ class GamesController < ApplicationController
       @result = "Sorry but #{@input} is not a valid English word"
     elsif exist?(@input) && valid?(@input, @letters) == false
       @result = "Sorry but #{@input} can't be build out of #{@letters_array}"
+    else
+      @result = 'You lost! Looser.'
     end
   end
 end

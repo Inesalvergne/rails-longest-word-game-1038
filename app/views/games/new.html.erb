@@ -1,14 +1,23 @@
-<h1> Welcome to the longest word game ! </h1>
+<div class="container">
+  <h1> Welcome to the longest word game ! </h1>
 
-<ul>
-  <% @letters.each do |letter| %>
-    <li><%= letter %></li>
-  <% end %>
-</ul>
+  <ul class= "letters">
+    <% @letters.each do |letter| %>
+      <li><%= letter %></li>
+    <% end %>
+  </ul>
 
-<form action="/score" method="POST" data-turbo="false">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= hidden_field_tag :letters, @letters %>
-  <input type="text" name="word">
-  <input type="submit" value="Submit your answer">
-</form>
+  <form action="/score" method="POST" data-turbo="false" class="form-inline">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :letters, @letters %>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <input type="text" name="word" class="form-control">
+        </div>
+        <div class="col">
+          <input type="submit" value="Submit your answer" class="btn btn-primary">
+      </div>
+    </div>
+  </form>
+</div>
